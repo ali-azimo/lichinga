@@ -1,4 +1,4 @@
-import Listing from "../models/listar.Model.js";
+import Listing from "../models/listar.model.js";
 import User from "../models/user.model.js"; // Se você tiver modelo de usuário
 import { errorHandler } from "../utils/error.js";
 

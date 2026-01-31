@@ -1,5 +1,5 @@
 import Notification from '../models/notification.model.js';
-import Listing from '../models/listar.Model.js';
+import Listing from '../models/listar.model.js';
 
 export const getNotifications = async (req, res) => {
   try {
