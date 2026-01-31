@@ -3,7 +3,7 @@ import {
   getPlatformStats,
   getPropertyTypeStats,
   getCityStats
-} from "../controllers/stats.Controller.js";
+} from "../controllers/stats.controller.js";
 
 const router = express.Router();
 
