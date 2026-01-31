@@ -13,7 +13,6 @@ export const getNotifications = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 export const markAsRead = async (req, res) => {
   try {
     const notification = await Notification.findById(req.params.id);
@@ -47,7 +46,6 @@ export const markAllAsRead = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 export const deleteNotification = async (req, res) => {
   try {
     const notification = await Notification.findById(req.params.id);

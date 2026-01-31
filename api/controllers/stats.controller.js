@@ -2,16 +2,11 @@ import Listing from "../models/listar.model.js";
 import User from "../models/user.model.js"; // Se você tiver modelo de usuário
 import { errorHandler } from "../utils/error.js";
 
-/**
- * Buscar estatísticas da plataforma
- */
 export const getPlatformStats = async (req, res, next) => {
   try {
     // Contar total de propriedades ativas
     const totalProperties = await Listing.countDocuments({});
 
-    // Contar usuários ativos (usuários com login nos últimos 30 dias)
-    // Se não tiver modelo de usuário, usar valor padrão
     let activeUsers = 0;
     try {
       const thirtyDaysAgo = new Date();
@@ -21,11 +16,9 @@ export const getPlatformStats = async (req, res, next) => {
         lastLogin: { $gte: thirtyDaysAgo }
       });
     } catch (error) {
-      // Fallback: usar 20% do total de propriedades como estimativa
       activeUsers = Math.round(totalProperties * 0.2);
     }
 
-    // Contar cidades únicas com propriedades
     const citiesData = await Listing.aggregate([
       {
         $group: {
