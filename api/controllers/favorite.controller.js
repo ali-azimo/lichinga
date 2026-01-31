@@ -1,5 +1,5 @@
 import Favorite from '../models/favorite.model.js';
-import Listing from '../models/listar.Model.js';
+import Listing from '../models/listar.model.js';
 import { errorHandler } from '../utils/error.js';
 
 export const getUserFavorites = async (req, res, next) => {
