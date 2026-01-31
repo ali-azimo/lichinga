@@ -3,6 +3,7 @@ import User from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import Listing from '../models/listar.model.js';
 
+
 export const test = (req, res) => {
     res.json({
         message: "API route is working!",

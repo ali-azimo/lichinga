@@ -10,6 +10,4 @@ router.post('/google', google);
 router.get('/signout', signOut)
 router.post('/forgot', forgotPassword)
 
-
-
 export default router;
